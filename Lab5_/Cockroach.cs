@@ -11,10 +11,11 @@ namespace Lab5_
     public class Cockroach
     {
         public Bitmap image;
-        const int step = 30;
+        const int step = 40;
         int x;
         int y;
         IDirection direction;
+
         public Cockroach(Bitmap _image)
         {
             image = _image;

@@ -78,7 +78,7 @@ namespace Lab5_
         {
             int dx = rnd.Next(Field.Width);
             int dy = rnd.Next(Field.Height);
-            cockroach = new Cockroach(new Bitmap("tarakan1.png"));
+            cockroach = new Cockroach(new Bitmap("tarakan.png"));
             cockroach.Image.Tag = "1";
             cockroach.newcoordinates(dx, dy);
             PictureBox p = new PictureBox();

@@ -7,3 +7,13 @@ C:\Users\aubva\source\repos\Lab5_\Lab5_\bin\Debug\Lab5_.exe
 C:\Users\aubva\source\repos\Lab5_\Lab5_\bin\Debug\Lab5_.pdb
 C:\Users\aubva\source\repos\Lab5_\Lab5_\obj\Debug\Lab5_.exe
 C:\Users\aubva\source\repos\Lab5_\Lab5_\obj\Debug\Lab5_.pdb
+C:\Users\aubva\Desktop\Lab5\Lab5_\bin\Debug\Lab5_.exe.config
+C:\Users\aubva\Desktop\Lab5\Lab5_\bin\Debug\Lab5_.exe
+C:\Users\aubva\Desktop\Lab5\Lab5_\bin\Debug\Lab5_.pdb
+C:\Users\aubva\Desktop\Lab5\Lab5_\obj\Debug\Lab5_.csprojAssemblyReference.cache
+C:\Users\aubva\Desktop\Lab5\Lab5_\obj\Debug\Lab5_.Form1.resources
+C:\Users\aubva\Desktop\Lab5\Lab5_\obj\Debug\Lab5_.Properties.Resources.resources
+C:\Users\aubva\Desktop\Lab5\Lab5_\obj\Debug\Lab5_.csproj.GenerateResource.cache
+C:\Users\aubva\Desktop\Lab5\Lab5_\obj\Debug\Lab5_.csproj.CoreCompileInputs.cache
+C:\Users\aubva\Desktop\Lab5\Lab5_\obj\Debug\Lab5_.exe
+C:\Users\aubva\Desktop\Lab5\Lab5_\obj\Debug\Lab5_.pdb
