@@ -62,6 +62,26 @@ namespace Lab5_
                     workField.Add(workpb);
                 }
             }
+            else
+            if (e.Button == MouseButtons.Right)//cмена образа таракана нажатием ПКМ
+            {
+                ClearWorkItems();
+                int k = PB.IndexOf(sender as PictureBox);
+                workpb = sender as PictureBox;
+                if ((LC[k].Image.Tag).ToString() == "1")
+                {
+                    LC[k] = new Cockroach(new Bitmap("cockroach1.png"));
+                    LC[k].Image.Tag = "2";
+                }
+                else
+                {
+                    LC[k] = new Cockroach(new Bitmap("cockroach.png"));
+                    LC[k].Image.Tag = "1";
+                }
+                workField.Add(workpb);
+                workAction.Add(LC[k]);
+                RePaint(LC[k], PB[k]);
+            }
         }
 
         private void IMouseMove(object sender, MouseEventArgs e)
@@ -69,7 +89,7 @@ namespace Lab5_
             if (e.Button == MouseButtons.Left)
             {
                 PictureBox picture = sender as PictureBox;
-                picture.Tag = new Point(picture.Location.X + e.X + 1, picture.Location.Y + e.Y + 1);//запоминаем координаты мыши на момент начала перетаскивания
+                picture.Tag = new Point(picture.Location.X + e.X + 1, picture.Location.Y + e.Y + 1);//запоминаем координаты мыши в момент начала перетаскивания
                 picture.DoDragDrop(sender, DragDropEffects.Move);//начинаем перетаскивание ЧЕГО и с КАКИМ ЭФФЕКТОМ
             }
         }
