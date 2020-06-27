@@ -17,8 +17,10 @@ namespace Lab5_
         List<Cockroach> workAction;
         List<PictureBox> workField;
         Cockroach cockroach;
-        Random rnd = new Random();
+        Random rand = new Random();
         int AlgStep; //текущая комманда
+        int _x, _y;
+        bool check = false;
 
         public Form1()
         {
@@ -31,12 +33,22 @@ namespace Lab5_
         }
         public void RePaint(Cockroach c, PictureBox p)
         {
-            p.Bounds = new Rectangle(c.X, c.Y, c.Image.Width, c.Image.Height);//создание новых границ изображения для PictureBox
+            if (check == false)
+            {
+                p.Bounds = new Rectangle(_x, _y, c.Image.Width, c.Image.Height);//создание новых границ изображения для PictureBox
+                c.X = _x;
+                c.Y = _y;
+            }
+            else
+            {
+                p.Bounds = new Rectangle(c.X, c.Y, c.Image.Width, c.Image.Height);
+            }
             p.Image = c.Image;
         }
 
         public void Show(Cockroach c, PictureBox p, Panel owner)
         {
+            check = true;
             RePaint(c, p);
             owner.Controls.Add(p);//добавляем PictureBox к элементу Panel
         }
@@ -50,7 +62,7 @@ namespace Lab5_
                     ClearWorkItems();
                 }
                 int k = PB.IndexOf(sender as PictureBox);//запоминаем номер нажатого компонента PictureBox
-                workpb = sender as PictureBox;//объявляем его рабочим
+                workpb = sender as PictureBox;//объявляем его рабочим  
                 workCockroach = LC[k];//по найденному номеру находим Таракана в списке
                 if (!workField.Any())
                 {
@@ -63,22 +75,26 @@ namespace Lab5_
                     workField.Add(workpb);
                 }
             }
-            else
-            if (e.Button == MouseButtons.Right)//cмена образа таракана нажатием ПКМ
+            else if (e.Button == MouseButtons.Right)//cмена образа таракана нажатием ПКМ
             {
                 ClearWorkItems();
                 int k = PB.IndexOf(sender as PictureBox);
-                workpb = sender as PictureBox;
+                PictureBox workpb = sender as PictureBox;
+                _x = workpb.Location.X;
+                _y = workpb.Location.Y;
                 if ((LC[k].Image.Tag).ToString() == "1")
                 {
                     LC[k] = new Cockroach(new Bitmap("cockroach1.png"));
                     LC[k].Image.Tag = "2";
+                    workpb.Location = new Point(_x,_y);
                 }
                 else
                 {
                     LC[k] = new Cockroach(new Bitmap("cockroach.png"));
                     LC[k].Image.Tag = "1";
+                    workpb.Location=new Point(_x, _y);
                 }
+                check = false;
                 workField.Add(workpb);
                 workAction.Add(LC[k]);
                 RePaint(LC[k], PB[k]);
@@ -97,8 +113,8 @@ namespace Lab5_
 
         private void NewHero_Click(object sender, EventArgs e)
         {
-            int dx = rnd.Next(Field.Width);
-            int dy = rnd.Next(Field.Height);
+            int dx = rand.Next(Field.Width);
+            int dy = rand.Next(Field.Height);
             cockroach = new Cockroach(new Bitmap("cockroach.png"));
             cockroach.Image.Tag = "1";
             cockroach.newcoordinates(dx, dy);
