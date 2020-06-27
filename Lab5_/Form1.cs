@@ -148,24 +148,18 @@ namespace Lab5_
         {
             if (AlgStep == Algorithm.Items.Count)//конец алгоритма
             {
-                TimerAlgorithm.Enabled = false;//выключение таймера
+                TimerAlgorithm.Stop();//выключение таймера
             }
             else//выполнение команды из списка
             {
-                for (int i = 0; i < workAction.Count; ++i) 
+                for (int i = 0; i < workField.Count; i++)
                 {
                     string s = (string)Algorithm.Items[AlgStep];
                     Algorithm.SetSelected(AlgStep, true);
                     if (s == "Step")
                         workAction[i].Step();
-                    if (s == "Up")
-                        workAction[i].ChangeTrend(s);//ChangeTrend описан в отдельном классе для каждой кнопки направления движения 
-                    if (s == "Left")
-                        workAction[i].ChangeTrend(s);
-                    if (s == "Right")
-                        workAction[i].ChangeTrend(s);
-                    if (s == "Down")
-                        workAction[i].ChangeTrend(s);
+                    else
+                        workAction[i].ChangeTrend(s[0]);
                     RePaint(workAction[i], workField[i]);
                 }
                 AlgStep++;
