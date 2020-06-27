@@ -86,13 +86,13 @@ namespace Lab5_
                 {
                     LC[k] = new Cockroach(new Bitmap("cockroach1.png"));
                     LC[k].Image.Tag = "2";
-                    workpb.Location = new Point(_x,_y);
+                   // workpb.Location = new Point(_x,_y);
                 }
                 else
                 {
                     LC[k] = new Cockroach(new Bitmap("cockroach.png"));
                     LC[k].Image.Tag = "1";
-                    workpb.Location=new Point(_x, _y);
+                   // workpb.Location=new Point(_x, _y);
                 }
                 check = false;
                 workField.Add(workpb);
@@ -177,6 +177,7 @@ namespace Lab5_
                         workAction[i].Step();
                     else
                         workAction[i].ChangeTrend(s[0]);
+                    check = true;
                     RePaint(workAction[i], workField[i]);
                 }
                 AlgStep++;
