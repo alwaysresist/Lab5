@@ -14,7 +14,7 @@ namespace Lab5_
         const int step = 40;
         int x;
         int y;
-        direction trend = direction.Right;
+        direction trend = direction.Up;
 
         public Cockroach(Bitmap _image)
         {
@@ -83,39 +83,42 @@ namespace Lab5_
 				}
 			switch (trend)
 			{
-				case direction.Up:
-					switch (newtrend)
-					{
-						case direction.Right: Image.RotateFlip(RotateFlipType.Rotate90FlipNone); break;
-						case direction.Down: Image.RotateFlip(RotateFlipType.Rotate180FlipNone); break;
-						case direction.Left: Image.RotateFlip(RotateFlipType.Rotate270FlipNone); break;
-					}
-					break;
-				case direction.Right:
-					switch (newtrend)
-					{
-						case direction.Up: Image.RotateFlip(RotateFlipType.Rotate270FlipNone); break;
-						case direction.Down: Image.RotateFlip(RotateFlipType.Rotate90FlipNone); break;
-						case direction.Left: Image.RotateFlip(RotateFlipType.Rotate180FlipNone); break;
-					}
-					break;
-				case direction.Down:
-					switch (newtrend)
-					{
-						case direction.Right: Image.RotateFlip(RotateFlipType.Rotate270FlipNone); break;
-						case direction.Up: Image.RotateFlip(RotateFlipType.Rotate180FlipNone); break;
-						case direction.Left: Image.RotateFlip(RotateFlipType.Rotate90FlipNone); break;
-					}
-					break;
-				case direction.Left:
-					switch (newtrend)
-					{
-						case direction.Right: Image.RotateFlip(RotateFlipType.Rotate180FlipNone); break;
-						case direction.Down: Image.RotateFlip(RotateFlipType.Rotate270FlipNone); break;
-						case direction.Up: Image.RotateFlip(RotateFlipType.Rotate90FlipNone); break;
-					}
-					break;
-			}
+                case direction.Up:
+                    switch (newtrend)
+                    {
+                        case direction.Right: Image.RotateFlip(RotateFlipType.Rotate90FlipNone); break;
+                        case direction.Down: Image.RotateFlip(RotateFlipType.Rotate180FlipNone); break;
+                        case direction.Left: Image.RotateFlip(RotateFlipType.Rotate270FlipNone); break;
+                    }
+                    break;
+                case direction.Right:
+                    switch (newtrend)
+                    {
+                        case direction.Up: Image.RotateFlip(RotateFlipType.Rotate270FlipNone); break;
+                        case direction.Down: Image.RotateFlip(RotateFlipType.Rotate90FlipNone); break;
+                        case direction.Left: Image.RotateFlip(RotateFlipType.Rotate180FlipNone); break;
+
+                    }
+                    break;
+                case direction.Down:
+                    switch (newtrend)
+                    {
+                        case direction.Right: Image.RotateFlip(RotateFlipType.Rotate270FlipNone); break;
+                        case direction.Up: Image.RotateFlip(RotateFlipType.Rotate180FlipNone); break;
+                        case direction.Left: Image.RotateFlip(RotateFlipType.Rotate90FlipNone); break;
+
+                    }
+                    break;
+                case direction.Left:
+                    switch (newtrend)
+                    {
+                        case direction.Right: Image.RotateFlip(RotateFlipType.Rotate180FlipNone); break;
+                        case direction.Down: Image.RotateFlip(RotateFlipType.Rotate270FlipNone); break;
+                        case direction.Up: Image.RotateFlip(RotateFlipType.Rotate90FlipNone); break;
+
+                    }
+                    break;
+            }
 			trend = newtrend;
 		}
 	}

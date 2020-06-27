@@ -13,8 +13,9 @@ namespace Lab5_
         PictureBox workpb;//рабочее поле PictureBox - поле на которой будет рабочий Таракан
         List<Cockroach> LC;//Список для хранения созданных Тараканов
         List<PictureBox> PB;//Список для хранения созданных объектов PictureBox
-        List<PictureBox> workField;
+
         List<Cockroach> workAction;
+        List<PictureBox> workField;
         Cockroach cockroach;
         Random rnd = new Random();
         int AlgStep; //текущая комманда
